@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konter Digital - Solusi Server Pulsa Modern</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563EB",
+                        accent: "#16A34A",
+                        neutral: "#F3F4F6",
+                        base: "#FFFFFF",
+                        "text-primary": "#1E293B",
+                        "text-secondary": "#64748B",
+
+                        // Warna CTA (Call to Action)
+                        "cta-primary": "#1fbca6",
+                        "cta-hover": "#f89e52",
+
+                       // Warna Gradasi untuk Hero Section (diperbarui untuk kesan mewah)
+                        "hero-gradient-start": "#0F172A", // Biru gelap yang sangat dalam (mirip Slate 900)
+                        "hero-gradient-end": "#1E3A8A", // Biru tua yang kaya (mirip Blue 800)
+
+                        // Warna Footer Biru Elegan
+                        "footer-elegant-blue": "#192A56", // Biru navy gelap
+                    },
+                    animation: {
+                        scroll: "scroll 40s linear infinite",
+                    },
+                    keyframes: {
+                        scroll: {
+                            from: { transform: "translateX(0)" },
+                            to: { transform: "translateX(calc(-50% - 2rem))" },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link.active {
+            @apply text-primary font-semibold;
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #1fbca6;
+        }
+    </style>
+</head>
+
+<body class="bg-base font-sans">
+    <header class="bg-base shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="asset/img/logo.png" alt="Logo Konter Digital" class="h-8" />
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2 active">Home</a>
+                <a href="privacy.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Privacy</a>
+                <a href="about.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">About Us</a>
+                <a href="detail-blog.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Blog</a>
+                <a href="contact.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="menu" class="hidden md:hidden bg-base">
+            <a href="index.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white active">Home</a>
+            <a href="privacy.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Privacy</a>
+            <a href="about.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">About
+                Us</a>
+            <a href="detail-blog.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Blog</a>
+            <a href="contact.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section - Diperbarui untuk kesan mewah, elegan, dan modern -->
+        <section id="home" class="bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end text-white relative overflow-hidden py-24 md:py-40">
+            <!-- Elemen dekoratif latar belakang (opsional, bisa dihapus jika terlalu kompleks) -->
+            <div class="absolute inset-0 z-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+
+            <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left scroll-animate">
+                    <h1 class="text-5xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-lg">
+                        Solusi Server Pulsa Modern untuk Bisnis Anda
+                    </h1>
+                    <p class="mt-4 text-xl text-blue-200 leading-relaxed drop-shadow-md">
+                        Cepat, Aman, Otomatis — Kelola pulsa dengan Konter Digital
+                    </p>
+                    <div class="mt-10 flex flex-col items-center md:items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <a href="contact.html"
+                            class="bg-cta-primary hover:bg-cta-hover text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-center">
+                            Coba Sekarang
+                        </a>
+                        <a href="privacy.html"
+                            class="bg-transparent border-2 border-white hover:bg-white hover:text-hero-gradient-end text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-md hover:shadow-xl text-center">
+                            Lihat Fitur
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="mt-6 inline-flex items-center justify-center bg-gray-900/70 text-white rounded-full px-6 py-3 space-x-3 hover:bg-gray-900/90 transition duration-300 shadow-lg w-full sm:w-auto">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.5,9.13a2.3,2.3,0,0,1-1.55-2.22,2.42,2.42,0,0,1,2.42-2.43,2.39,2.39,0,0,1,2.42,2.43,2.3,2.3,0,0,1-1.55,2.22l-1.74.83Z M3,4.27,14.22,15.55l3.1-3.1L5.59,1,3,2.62Z M15.53,16.8,4.24,5.51,2.62,8.08,13.23,18.7l2.3-1.9Z M17.33,12.2a2.31,2.31,0,0,1,1.56,2.23,2.42,2.42,0,0,1-2.42,2.42,2.39,2.39,0,0,1-2.42-2.42,2.31,2.31,0,0,1,1.56-2.23l1.72-.83Z M20.4,11,17.7,12.35l-2.9,2.9,2.57,2.57,3-1.53Z" />
+                        </svg>
+                        <div class="text-left">
+                            <p class="text-xs uppercase opacity-80">Get it on</p>
+                            <p class="text-lg font-semibold">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex justify-center scroll-animate" style="transition-delay: 300ms;">
+                    <img src="asset/img/konterdigital.png"
+                        alt="Aplikasi Konter Digital" class="transform md:rotate-6 max-w-full h-auto" />
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-base">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-text-primary mb-2 scroll-animate">
+                    Produk Terlengkap & Terpercaya
+                </h2>
+                <p class="text-text-secondary mb-12 scroll-animate">
+                    Kami mendukung semua provider dan e-wallet populer di Indonesia.
+                </p>
+                <div
+                    class="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+                    <div class="flex w-max items-center gap-x-16 animate-scroll">
+                        <div class="flex items-center gap-x-16" aria-hidden="true">
+                            <img class="h-10 shrink-0" src="https://assets.telkomsel.com/public/logo-telkomsel.png"
+                                alt="Telkomsel" />
+                            <img class="h-9 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1280px-Logo_dana_blue.svg.png"
+                                alt="DANA" />
+                            <img class="h-10 shrink-0"
+                                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEHP_C85fHYvoUpOBk3cZqzRpTETYBJLEBRoKHSEKBltUUNrIKdLKKWdwSmY7-FdxC7gEC2REVlpXQHxHozcuGgXD-PCj0HgcOsHpl3oW8B8kGxptETuUN8DVqJTKeHFWMQopZTZTS1V2DyC9mw0awTWnY0UQvoKIC0c07vfz4Dk1V5C1Nbck9oOs9/s320/GKL2_Indosat%20Ooredoo%20Hutchison%20-%20Koleksilogo.com.jpg"
+                                alt="Indosat" />
+                            <img class="h-12 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/512px-Logo_ovo_purple.svg.png"
+                                alt="OVO" />
+                            <img class="h-12 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1000px-Shopee.svg.png"
+                                alt="ShopeePay" />
+                            <img class="h-8 shrink-0" src="https://tri.co.id/assets/image/logo_tri_black.png"
+                                alt="Three" />
+                            <img class="h-10 shrink-0" src="https://gopay.co.id/assets/img/logo/gopay.webp"
+                                alt="GoPay" />
+                        </div>
+                        <div class="flex items-center gap-x-16" aria-hidden="true">
+                            <img class="h-10 shrink-0" src="https://assets.telkomsel.com/public/logo-telkomsel.png"
+                                alt="Telkomsel" />
+                            <img class="h-9 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/1280px-Logo_dana_blue.svg.png"
+                                alt="DANA" />
+                            <img class="h-10 shrink-0"
+                                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEHP_C85fHYvoUpOBk3cZqzRpTETYBJLEBRoKHSEKBltUUNrIKdLKKWdwSmY7-FdxC7gEC2REVlpXQHxHozcuGgXD-PCj0HgcOsHpl3oW8B8kGxptETuUN8DVqJTKeHFWMQopZTZTS1V2DyC9mw0awTWnY0UQvoKIC0c07vfz4Dk1V5C1Nbck9oOs9/s320/GKL2_Indosat%20Ooredoo%20Hutchison%20-%20Koleksilogo.com.jpg"
+                                alt="Indosat" />
+                            <img class="h-12 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/512px-Logo_ovo_purple.svg.png"
+                                alt="OVO" />
+                            <img class="h-12 shrink-0"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Shopee.svg/1000px-Shopee.svg.png"
+                                alt="ShopeePay" />
+                            <img class="h-8 shrink-0" src="https://tri.co.id/assets/image/logo_tri_black.png"
+                                alt="Three" />
+                            <img class="h-10 shrink-0" src="https://gopay.co.id/assets/img/logo/gopay.webp"
+                                alt="GoPay" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fitur" class="py-20 bg-neutral">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">Fitur Unggulan Kami</h2>
+                    <p class="text-text-secondary mt-2">Semua yang Anda butuhkan dalam satu platform.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-base p-8 rounded-xl shadow-md text-center transform hover:-translate-y-2 transition duration-300 scroll-animate">
+                        <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-text-primary mt-6">Pengisian Otomatis</h3>
+                        <p class="text-text-secondary mt-2 text-sm">Transaksi diproses 24/7 secara otomatis tanpa perlu campur tangan manual.</p>
+                    </div>
+                    <div class="bg-base p-8 rounded-xl shadow-md text-center transform hover:-translate-y-2 transition duration-300 scroll-animate" style="transition-delay: 150ms;">
+                        <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-text-primary mt-6">Saldo Real-Time</h3>
+                        <p class="text-text-secondary mt-2 text-sm">Pantau saldo dan mutasi dana Anda secara langsung kapan saja.</p>
+                    </div>
+                    <div class="bg-base p-8 rounded-xl shadow-md text-center transform hover:-translate-y-2 transition duration-300 scroll-animate" style="transition-delay: 300ms;">
+                        <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-text-primary mt-6">Riwayat Transaksi</h3>
+                        <p class="text-text-secondary mt-2 text-sm">Laporan lengkap dan detail semua transaksi yang pernah Anda lakukan.</p>
+                    </div>
+                    <div class="bg-base p-8 rounded-xl shadow-md text-center transform hover:-translate-y-2 transition duration-300 scroll-animate" style="transition-delay: 450ms;">
+                        <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.125-1.273-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.125-1.273.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div>
+                        <h3 class="text-xl font-semibold text-text-primary mt-6">Sistem Referral</h3>
+                        <p class="text-text-secondary mt-2 text-sm">Dapatkan penghasilan pasif dengan mengajak teman bergabung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="py-20 bg-base">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1484&auto=format&fit=crop"
+                        alt="Tim Konter Digital" class="rounded-lg shadow-xl w-full" />
+                </div>
+                <div class="scroll-animate" style="transition-delay: 150ms">
+                    <h2 class="text-3xl font-bold text-text-primary">
+                        Tentang Konter Digital
+                    </h2>
+                    <p class="mt-4 text-text-secondary">
+                        Konter Digital lahir dari kebutuhan untuk menyediakan solusi
+                        server pulsa yang tidak hanya handal, tetapi juga modern dan mudah
+                        digunakan. Kami berkomitmen untuk mendukung pertumbuhan bisnis
+                        agen pulsa di seluruh Indonesia melalui teknologi terdepan.
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-text-primary">
+                            Visi & Misi
+                        </h3>
+                        <ul class="mt-2 list-disc list-inside text-text-secondary space-y-2">
+                            <li>
+                                Menjadi platform server pulsa nomor satu yang paling dipercaya
+                                di Indonesia.
+                            </li>
+                            <li>
+                                Memberdayakan UMKM dan agen pulsa dengan teknologi yang
+                                efisien dan menguntungkan.
+                            </li>
+                            <li>
+                                Memberikan layanan pelanggan terbaik dengan respon yang cepat
+                                dan solutif.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-20 bg-neutral">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
+                        Dari Blog Kami
+                    </h2>
+                    <p class="text-text-secondary mt-2">
+                        Tips, trik, dan berita terbaru seputar bisnis pulsa.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-base rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 scroll-animate">
+                        <img src="https://images.unsplash.com/photo-1554495573-2d277b5f1784?q=80&w=1470&auto=format&fit=crop"
+                            alt="Blog Image" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-text-secondary">3 Agustus 2025</p>
+                            <a href="detail-blog.html" class="block">
+                                <h3 class="font-bold text-xl mt-2 text-text-primary">
+                                    5 Cara Meningkatkan Omzet Konter Pulsa
+                                </h3>
+                            </a>
+                            <p class="text-text-secondary mt-2">
+                                Pelajari strategi jitu untuk menaikkan keuntungan bisnis pulsa
+                                Anda di era digital.
+                            </p>
+                            <a href="#" class="text-primary hover:underline mt-4 inline-block font-semibold">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-base rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 scroll-animate"
+                        style="transition-delay: 150ms">
+                        <img src="https://images.unsplash.com/photo-1633113089632-62432c38ade0?q=80&w=1470&auto=format&fit=crop"
+                            alt="Blog Image" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-text-secondary">28 Juli 2025</p>
+                            <a href="detail-blog.html" class="block">
+                                <h3 class="font-bold text-xl mt-2 text-text-primary">
+                                    Mengapa Sistem Referral Penting?
+                                </h3>
+                            </a>
+                            <p class="text-text-secondary mt-2">
+                                Manfaatkan kekuatan word-of-mouth untuk mendapatkan
+                                penghasilan pasif.
+                            </p>
+                            <a href="#" class="text-primary hover:underline mt-4 inline-block font-semibold">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-base rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition duration-300 scroll-animate"
+                        style="transition-delay: 300ms">
+                        <img src="https://images.unsplash.com/photo-1586941829035-662b2d6f29a2?q=80&w=1470&auto=format&fit=crop"
+                            alt="Blog Image" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <p class="text-sm text-text-secondary">20 Juli 2025</p>
+                            <a href="detail-blog.html" class="block">
+                                <h3 class="font-bold text-xl mt-2 text-text-primary">
+                                    Keamanan Transaksi Digital: Yang Perlu Anda Tahu
+                                </h3>
+                            </a>
+                            <p class="text-text-secondary mt-2">
+                                Pastikan bisnis dan pelanggan Anda aman dari penipuan dengan
+                                tips berikut.
+                            </p>
+                            <a href="#" class="text-primary hover:underline mt-4 inline-block font-semibold">Baca
+                                Selengkapnya &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-footer-elegant-blue text-blue-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="flex items-center">
+                        <img src="asset/img/logo.png" alt="Logo Konter Digital Putih" class="h-8" />
+                    </a>
+                    <p class="mt-4 text-blue-300 text-sm">
+                        Jl. Pulsa Digital No. 10, Jakarta, Indonesia
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">Menu</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li class="text-sm">
+                            <a href="index.html" class="hover:text-white transition duration-300">Home</a>
+                        </li>
+                        <li class="text-sm">
+                            <a href="detail-blog.html" class="hover:text-white transition duration-300">Blog</a>
+                        </li>
+                        <li class="text-sm">
+                            <a href="about.html" class="hover:text-white transition duration-300">About Us</a>
+                        </li>
+                        <li class="text-sm">
+                            <a href="contact.html" class="hover:text-white transition duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">Ikuti Kami</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Facebook"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z" />
+                            </svg></a>
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Twitter/X"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h3.437l5.01 6.916L18.244 2.25zM17.5 19.5h1.5l-8.5-11.5h-1.7l8.7 11.5z" />
+                            </svg></a>
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Instagram"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">
+                        Layanan Pelanggan
+                    </h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li class="flex items-center">
+                            CS (WhatsApp):
+                            <a href="#" class="ml-2 hover:text-white transition duration-300">0812-3456-7890</a>
+                        </li>
+                        <li class="flex items-center">
+                            Channel (Telegram):
+                            <a href="#" class="ml-2 hover:text-white transition duration-300">@KonterDigitalID</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-300 text-center text-blue-300 text-sm">
+                <p>&copy; 2025 Konter Digital. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script untuk Toggle Menu Mobile ---
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+        const mobileLinks = document.querySelectorAll(".nav-link-mobile");
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                menu.classList.add("hidden");
+            });
+        });
+
+        // --- Script untuk Animasi Saat Scroll ---
+        const scrollElements = document.querySelectorAll(".scroll-animate");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        scrollElements.forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

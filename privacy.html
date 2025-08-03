@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konter Digital - Solusi Server Pulsa Modern</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563EB',
+                        'accent': '#16A34A',
+                        'neutral': '#F3F4F6',
+                        'base': '#FFFFFF',
+                        'text-primary': '#1E293B',
+                        'text-secondary': '#64748B',
+
+                        // Warna CTA (Call to Action)
+                        'cta-primary': '#1fbca6',
+                        'cta-hover': '#f89e52',
+
+                        // Warna Gradasi untuk Hero Section
+                        'hero-gradient-start': '#0077b6', // Biru muda cerah
+                        'hero-gradient-end': '#2B6CB0',   // Biru lebih dalam
+
+                        // Warna Footer Biru Elegan
+                        'footer-elegant-blue': '#192A56' // Biru navy gelap
+                    },
+                    animation: {
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            'from': { transform: 'translateX(0)' },
+                            'to': { transform: 'translateX(calc(-50% - 2rem))' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link.active {
+            @apply text-primary font-semibold;
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #1fbca6;
+        }
+
+        .active {
+            @apply text-primary font-semibold;
+        }
+    </style>
+</head>
+
+<body class="bg-base font-sans">
+
+    <header class="bg-base shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="asset/img/logo.png" alt="Logo Konter Digital" class="h-8">
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Home</a>
+                <a href="privacy.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2 active">Privacy</a>
+                <a href="about.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">About Us</a>
+                <a href="detail-blog.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Blog</a>
+                <a href="contact.html"
+                    class="nav-link text-text-primary hover:text-primary transition duration-300 py-2">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-primary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="menu" class="hidden md:hidden bg-base">
+            <a href="index.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Home</a>
+            <a href="privacy.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Privacy</a>
+            <a href="about.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">About
+                Us</a>
+            <a href="detail-blog.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Blog</a>
+            <a href="contact.html"
+                class="nav-link-mobile block py-2 px-6 text-sm text-text-primary hover:bg-primary hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Kebijakan Privasi</h1>
+                <p class="mt-2 text-gray-500">Terakhir diperbarui: 3 Agustus 2025</p>
+
+                <article class="prose prose-lg max-w-none mt-10 text-gray-700 leading-relaxed">
+                    <p>
+                        Selamat datang di Konter Digital. Kami berkomitmen untuk melindungi privasi data Anda. Kebijakan Privasi ini menjelaskan bagaimana kami ("Konter Digital", "kami") mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda menggunakan aplikasi seluler dan layanan kami (secara kolektif disebut "Layanan").
+                    </p>
+                    
+                    <h2>1. Informasi yang Kami Kumpulkan</h2>
+                    <p>Kami dapat mengumpulkan beberapa jenis informasi dari dan tentang pengguna Layanan kami:</p>
+                    <h3>a. Informasi yang Anda Berikan kepada Kami</h3>
+                    <ul>
+                        <li><strong>Data Pendaftaran Akun:</strong> Saat Anda mendaftar, kami mengumpulkan informasi seperti nama, nomor telepon, dan alamat email Anda.</li>
+                        <li><strong>Informasi Transaksi:</strong> Detail transaksi yang Anda lakukan melalui Layanan kami, seperti pembelian pulsa, token listrik, pembayaran tagihan, dan lainnya.</li>
+                        <li><strong>Komunikasi:</strong> Jika Anda menghubungi kami untuk dukungan pelanggan, kami akan mengumpulkan informasi yang Anda berikan dalam komunikasi tersebut.</li>
+                    </ul>
+                    <h3>b. Informasi yang Kami Kumpulkan Secara Otomatis</h3>
+                    <ul>
+                        <li><strong>Data Penggunaan:</strong> Informasi tentang bagaimana Anda mengakses dan menggunakan Layanan, termasuk interaksi Anda dengan fitur-fitur di aplikasi.</li>
+                        <li><strong>Informasi Perangkat:</strong> Kami mengumpulkan informasi tentang perangkat seluler Anda, termasuk model perangkat keras, sistem operasi dan versi, pengenal perangkat unik, dan alamat IP.</li>
+                    </ul>
+
+                    <h2>2. Bagaimana Kami Menggunakan Informasi Anda</h2>
+                    <p>Kami menggunakan informasi yang kami kumpulkan untuk berbagai tujuan, termasuk:</p>
+                    <ul>
+                        <li>Untuk menyediakan, memelihara, dan meningkatkan Layanan kami.</li>
+                        <li>Untuk memproses transaksi Anda dan mengirimkan notifikasi terkait.</li>
+                        <li>Untuk mencegah penipuan dan mengamankan platform kami.</li>
+                        <li>Untuk menanggapi permintaan dan pertanyaan dukungan pelanggan Anda.</li>
+                        <li>Untuk berkomunikasi dengan Anda tentang produk, layanan, penawaran, dan pembaruan yang mungkin menarik bagi Anda.</li>
+                        <li>Untuk mematuhi kewajiban hukum yang berlaku.</li>
+                    </ul>
+
+                    <h2>3. Bagaimana Kami Membagikan Informasi Anda</h2>
+                    <p>Kami tidak menjual atau menyewakan informasi pribadi Anda kepada pihak ketiga. Kami hanya dapat membagikan informasi Anda dalam situasi berikut:</p>
+                    <ul>
+                        <li><strong>Dengan Penyedia Layanan:</strong> Kami dapat membagikan informasi dengan vendor pihak ketiga yang menyediakan layanan atas nama kami, seperti pemroses pembayaran, penyedia infrastruktur cloud, dan mitra operator telekomunikasi.</li>
+                        <li><strong>Untuk Kepatuhan Hukum:</strong> Kami dapat mengungkapkan informasi Anda jika diwajibkan oleh hukum, panggilan pengadilan, atau proses hukum lainnya.</li>
+                        <li><strong>Dengan Persetujuan Anda:</strong> Kami dapat membagikan informasi Anda untuk tujuan lain apa pun dengan persetujuan eksplisit dari Anda.</li>
+                    </ul>
+
+                    <h2>4. Keamanan Data</h2>
+                    <p>
+                        Kami menerapkan langkah-langkah keamanan teknis dan organisasional yang wajar untuk melindungi informasi pribadi Anda dari akses, penggunaan, atau pengungkapan yang tidak sah. Ini termasuk penggunaan enkripsi untuk data saat transit dan saat disimpan. Namun, perlu diingat bahwa tidak ada metode transmisi melalui internet atau metode penyimpanan elektronik yang 100% aman.
+                    </p>
+
+                    <h2>5. Hak Anda</h2>
+                    <p>
+                        Anda memiliki hak untuk mengakses, memperbaiki, atau menghapus informasi pribadi Anda yang kami simpan. Anda dapat mengelola informasi akun Anda langsung dari pengaturan di dalam aplikasi atau dengan menghubungi tim dukungan kami.
+                    </p>
+                    
+                    <h2>6. Privasi Anak-Anak</h2>
+                    <p>
+                        Layanan kami tidak ditujukan untuk individu di bawah usia 13 tahun. Kami tidak secara sadar mengumpulkan informasi pribadi dari anak-anak di bawah 13 tahun. Jika kami mengetahui bahwa kami telah mengumpulkan informasi pribadi dari seorang anak di bawah umur tersebut, kami akan mengambil langkah-langkah untuk menghapus informasi tersebut.
+                    </p>
+
+                    <h2>7. Perubahan pada Kebijakan Privasi Ini</h2>
+                    <p>
+                        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberitahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal "Terakhir diperbarui" di bagian atas. Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala.
+                    </p>
+
+                    <h2>8. Hubungi Kami</h2>
+                    <p>
+                        Jika Anda memiliki pertanyaan atau kekhawatiran tentang Kebijakan Privasi ini, silakan hubungi kami melalui email di: <a href="mailto:privacy@konterdigital.com">privacy@konterdigital.com</a>.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-footer-elegant-blue text-blue-200">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class=" flex items-center">
+                        <img src="asset/img/logo.png" alt="Logo Konter Digital Putih" class="h-8">
+                    </a>
+                    <p class="mt-4 text-blue-300 text-sm">Jl. Pulsa Digital No. 10, Jakarta, Indonesia</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">Menu</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li class="text-sm"><a href="index.html" class=" hover:text-white transition
+                                duration-300">Home</a>
+                        </li>
+                        <li class="text-sm"><a href="detail-blog.html" class=" hover:text-white transition
+                                duration-300">Blog</a>
+                        </li>
+                        <li class="text-sm"><a href="about.html" class="hover:text-white transition duration-300">About
+                                Us</a></li>
+                        <li class="text-sm"><a href="contact.html"
+                                class="hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">Ikuti Kami</h3>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Facebook"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z" />
+                            </svg></a>
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Twitter/X"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1 2.25h3.437l5.01 6.916L18.244 2.25zM17.5 19.5h1.5l-8.5-11.5h-1.7l8.7 11.5z" />
+                            </svg></a>
+                        <a href="#" class="hover:text-white transition duration-300" aria-label="Instagram"><svg
+                                class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-semibold tracking-wider text-white">Layanan Pelanggan</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li class="flex items-center">CS (WhatsApp): <a href="#"
+                                class="ml-2 hover:text-white transition duration-300">0812-3456-7890</a></li>
+                        <li class="flex items-center">Channel (Telegram): <a href="#"
+                                class="ml-2 hover:text-white transition duration-300">@KonterDigitalID</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-300 text-center text-blue-300 text-sm">
+                <p>&copy; 2025 Konter Digital. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Script untuk Toggle Menu Mobile ---
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+        menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
+
+        // --- Script untuk Animasi Saat Scroll ---
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        scrollElements.forEach(el => { observer.observe(el); });
+    </script>
+</body>
+
+</html>
